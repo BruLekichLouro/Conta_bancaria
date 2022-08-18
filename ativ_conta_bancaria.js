@@ -36,3 +36,26 @@ class ContaCorrente extends ContaBancaria {
         this._cartaoCredito=valor; //vai dizer se é true ou false
     }
 }
+
+class ContaPoupanca {
+    constructor(agencia, numero, saldo){
+        super(agencia, numero, saldo);
+        this.tipo = 'poupança';
+    }
+}
+
+class ContaUniversitaria {
+    constructor(agencia, numero, saldo){
+        super(agencia, numero, saldo);
+        this.tipo = 'universitaria';
+    }
+    sacar(valor){
+        if(valor >500){
+            return "Operação negada";
+        } else if(this._saldo > valor){
+            this._saldo = this._saldo - valor;
+            return this._saldo;
+        }
+    }
+}
+
