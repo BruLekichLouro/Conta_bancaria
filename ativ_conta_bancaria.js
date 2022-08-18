@@ -10,4 +10,15 @@ class ContaBancaria{
     set saldo(valor){
         this._saldo=valor;
     }
+    sacar(valor){
+        if(valor > this._saldo){
+            return "Operação negada"
+        }
+        this._saldo = this._saldo - valor;
+        return this._saldo;
+    }
+    depositar(valor){
+        this._saldo = this._saldo + valor;
+        return this._saldo;
+    }
 }
